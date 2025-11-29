@@ -35,7 +35,7 @@ namespace Examen_final.Modelos
             }
 
         }
-        public static bool Crear(string tipos, string detalles,string costo, string fechayhora_recepcion, string fechayhora_devolucion)
+        public static bool Crear(string tipo, string detalles,string costo, string fechayhora_recepcion, string fechayhora_devolucion)
         {
             conexion cnn = new conexion();
             try
@@ -44,7 +44,7 @@ namespace Examen_final.Modelos
                 string consulta = "INSERT INTO mantenimientos (tipos, detalles, costo, fechayhora_recepcion,fechayhora_devolucion) " +
                                   "VALUES (@tipos, @detalles, @costo, @fechayhora_recepcion, @fechayhora_devolucion)";
                 SqlCommand cmd = new SqlCommand(consulta, cnn.conectar());
-                cmd.Parameters.AddWithValue("@tipos", tipos);
+                cmd.Parameters.AddWithValue("@tipo", tipo);
                 cmd.Parameters.AddWithValue("@detalles", detalles);
                 cmd.Parameters.AddWithValue("@costo", costo);
                 cmd.Parameters.AddWithValue("@fechayhora_devolucion", fechayhora_devolucion);
@@ -54,7 +54,7 @@ namespace Examen_final.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al crear el autor: " + ex.Message);
+                MessageBox.Show("Error al crear el obsoletos: " + ex.Message);
                 return false;
             }
             finally

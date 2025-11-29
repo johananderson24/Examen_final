@@ -52,7 +52,7 @@ namespace Examen_final.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al crear el obsoleots: " + ex.Message);
+                MessageBox.Show("Error al crear el obsoletos: " + ex.Message);
                 return false;
             }
             finally
